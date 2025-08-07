@@ -5,6 +5,26 @@
     box-sizing: border-box;
 }
 
+/* Prevent text selection for logos and important elements */
+.nav-logo,
+.hero-logo,
+.designer-logo,
+.logo-icon,
+.service-icon,
+.social-link,
+.nav-logo h2,
+.hero-title,
+.section-title,
+.service-card h3,
+.contact-content h3,
+.footer-section h3,
+.footer-section h4 {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #000;
@@ -231,6 +251,8 @@ body::before {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(182, 145, 33, 0.4);
+    position: relative;
+    z-index: 20;
 }
 
 .cta-button:hover {
@@ -255,7 +277,6 @@ body::before {
 .hero-logo {
     position: absolute;
     z-index: 10;
-    animation: logoRotate 20s linear infinite;
     filter: drop-shadow(0 0 20px rgba(182, 145, 33, 0.6));
 }
 
@@ -275,6 +296,7 @@ body::before {
     background: linear-gradient(90deg, #6C5522, #B8924C, #FEE28F, #E4C376, #C49C56, #FBDF8C, #FEFCC1, #FEE490, #A98749);
     opacity: 0.8;
     animation: float 6s ease-in-out infinite;
+    z-index: 5;
 }
 
 .element-1 {
@@ -327,8 +349,10 @@ body::before {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .service-card {
@@ -422,10 +446,103 @@ body::before {
     animation: shimmer 3s ease-in-out infinite;
 }
 
+.calendar-contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+
+.calendar-wrapper {
+    width: 100%;
+}
+
 .calendly-inline-widget {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(182, 145, 33, 0.2);
+    width: 100%;
+}
+
+.contact-form-wrapper {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(182, 145, 33, 0.2);
+    border-radius: 15px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-content h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #6C5522, #B8924C, #FEE28F, #E4C376, #C49C56, #FBDF8C, #FEFCC1, #FEE490, #A98749);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+.contact-content p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input {
+    padding: 1rem 1.5rem;
+    border: 1px solid rgba(182, 145, 33, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #B8924C;
+    box-shadow: 0 0 10px rgba(182, 145, 33, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.contact-button {
+    background: linear-gradient(90deg, #6C5522, #B8924C, #FEE28F, #E4C376, #C49C56, #FBDF8C, #FEFCC1, #FEE490, #A98749);
+    color: #000;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(182, 145, 33, 0.4);
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(182, 145, 33, 0.6);
 }
 
 /* Footer */
@@ -489,6 +606,7 @@ body::before {
 
 .social-links {
     display: flex;
+    justify-content: flex-start;
     gap: 1rem;
     margin-top: 1rem;
 }
@@ -496,14 +614,16 @@ body::before {
 .social-link {
     width: 50px;
     height: 50px;
-    background: linear-gradient(90deg, #6C5522, #B8924C, #FEE28F, #E4C376, #C49C56, #FBDF8C, #FEFCC1, #FEE490, #A98749);
+    background: #000;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000;
+    color: #B8924C;
     font-size: 1.2rem;
     transition: all 0.3s ease;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.8));
+    border: 2px solid #B8924C;
 }
 
 .social-link:hover {
@@ -688,9 +808,33 @@ body::before {
         grid-template-columns: 1fr;
     }
 
+    .calendar-contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 2rem;
+        min-height: 700px;
+    }
+
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .designer-credit {
+        margin-top: 2rem;
+        text-align: center;
+        align-items: center;
+    }
+
+    .designer-text {
+        justify-content: center;
     }
 }
 
@@ -706,6 +850,298 @@ body::before {
     .cta-button {
         padding: 0.8rem 1.5rem;
         font-size: 1rem;
+    }
+}
+
+/* High Resolution Optimizations */
+@media (min-width: 2560px) {
+    .container {
+        max-width: 1800px;
+        padding: 0 40px;
+    }
+
+    .nav-container {
+        max-width: 1800px;
+        padding: 0 40px;
+    }
+
+    .nav-logo h2 {
+        font-size: 2.5rem;
+    }
+
+    .nav-menu {
+        gap: 3rem;
+    }
+
+    .nav-menu a {
+        font-size: 1.2rem;
+    }
+
+    .hero-title {
+        font-size: 5rem;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.8rem;
+        line-height: 1.6;
+        margin-bottom: 3rem;
+    }
+
+    .cta-button {
+        padding: 1.5rem 3rem;
+        font-size: 1.3rem;
+        border-radius: 50px;
+    }
+
+    .hero-visual {
+        height: 600px;
+    }
+
+    .hero-logo img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .element {
+        width: 80px;
+        height: 80px;
+    }
+
+    .section-title {
+        font-size: 3.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+        margin-top: 4rem;
+        max-width: 1200px;
+    }
+
+    .service-card {
+        padding: 3rem;
+        border-radius: 20px;
+    }
+
+    .service-icon {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 2rem;
+    }
+
+    .service-card h3 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .service-card ul {
+        gap: 1rem;
+    }
+
+    .service-card li {
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+
+    .calendar-subtitle {
+        font-size: 1.8rem;
+        margin-bottom: 3rem;
+    }
+
+    .calendly-inline-widget {
+        height: 800px;
+    }
+
+    .contact-form-wrapper {
+        min-height: 800px;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-section p,
+    .footer-section li {
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+
+    .social-link {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.8));
+        border: 3px solid #B8924C;
+    }
+
+    .legal-header h1 {
+        font-size: 4rem;
+    }
+
+    .legal-text h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .legal-text p,
+    .legal-text li {
+        font-size: 1.3rem;
+        line-height: 1.8;
+    }
+}
+
+/* 4K Resolution Optimizations */
+@media (min-width: 3840px) {
+    .container {
+        max-width: 2400px;
+        padding: 0 60px;
+    }
+
+    .nav-container {
+        max-width: 2400px;
+        padding: 0 60px;
+    }
+
+    .nav-logo h2 {
+        font-size: 3rem;
+    }
+
+    .nav-menu {
+        gap: 4rem;
+    }
+
+    .nav-menu a {
+        font-size: 1.4rem;
+    }
+
+    .hero-title {
+        font-size: 6.5rem;
+        line-height: 1.1;
+        margin-bottom: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 2.2rem;
+        line-height: 1.6;
+        margin-bottom: 4rem;
+    }
+
+    .cta-button {
+        padding: 2rem 4rem;
+        font-size: 1.6rem;
+        border-radius: 60px;
+    }
+
+    .hero-visual {
+        height: 800px;
+    }
+
+    .hero-logo img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .element {
+        width: 100px;
+        height: 100px;
+    }
+
+    .section-title {
+        font-size: 4.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+        margin-top: 5rem;
+        max-width: 1600px;
+    }
+
+    .service-card {
+        padding: 4rem;
+        border-radius: 25px;
+    }
+
+    .service-icon {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 2.5rem;
+    }
+
+    .service-card h3 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .service-card ul {
+        gap: 1.2rem;
+    }
+
+    .service-card li {
+        font-size: 1.4rem;
+        line-height: 1.8;
+    }
+
+    .calendar-subtitle {
+        font-size: 2.2rem;
+        margin-bottom: 4rem;
+    }
+
+    .calendly-inline-widget {
+        height: 1000px;
+    }
+
+    .contact-form-wrapper {
+        min-height: 1000px;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5rem;
+    }
+
+    .footer-section h3 {
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .footer-section p,
+    .footer-section li {
+        font-size: 1.4rem;
+        line-height: 1.8;
+    }
+
+    .social-link {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+        filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.8));
+        border: 4px solid #B8924C;
+    }
+
+    .legal-header h1 {
+        font-size: 5rem;
+    }
+
+    .legal-text h2 {
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .legal-text p,
+    .legal-text li {
+        font-size: 1.6rem;
+        line-height: 1.8;
     }
 }
 

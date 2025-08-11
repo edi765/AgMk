@@ -16,7 +16,9 @@ class ParticleSystem {
         console.log('ParticleSystem initialized successfully!');
         
         this.particles = [];
-        this.particleCount = window.innerWidth < 768 ? 30 : 50; // Fewer particles on mobile
+        this.particleCount = window.innerWidth < 768 ? 30 : 
+                            window.innerWidth < 1440 ? 50 : 
+                            window.innerWidth < 1920 ? 80 : 120; // More particles on high-res displays
         this.colors = [
             'rgba(255, 0, 0, 1.0)',     // Red (full opacity)
             'rgba(147, 0, 211, 0.9)',   // Purple
@@ -80,7 +82,9 @@ class ParticleSystem {
         
         // Adjust particle count based on screen size
         const newParticleCount = window.innerWidth < 768 ? 30 : 
-                                window.innerWidth < 1024 ? 40 : 50;
+                                window.innerWidth < 1024 ? 40 : 
+                                window.innerWidth < 1440 ? 50 : 
+                                window.innerWidth < 1920 ? 80 : 120;
         
         if (newParticleCount !== this.particleCount) {
             this.particleCount = newParticleCount;
@@ -96,7 +100,7 @@ class ParticleSystem {
                 y: Math.random() * this.canvas.height,
                 vx: (Math.random() - 0.5) * 0.5,
                 vy: (Math.random() - 0.5) * 0.5,
-                size: Math.random() * 3 + 1,
+                size: Math.random() * (window.innerWidth < 1440 ? 3 : window.innerWidth < 1920 ? 4 : 5) + (window.innerWidth < 1440 ? 1 : window.innerWidth < 1920 ? 1.5 : 2),
                 color: this.colors[Math.floor(Math.random() * this.colors.length)],
                 targetColor: this.colors[Math.floor(Math.random() * this.colors.length)],
                 opacity: Math.random() * 0.8 + 0.5,
@@ -116,8 +120,9 @@ class ParticleSystem {
                 const dy = particle.y - this.mouseY;
                 const distance = Math.sqrt(dx * dx + dy * dy);
                 
-                if (distance < 150) {
-                    const force = (150 - distance) / 150 * 0.3;
+                const interactionDistance = window.innerWidth < 1440 ? 150 : window.innerWidth < 1920 ? 200 : 250;
+                if (distance < interactionDistance) {
+                    const force = (interactionDistance - distance) / interactionDistance * 0.3;
                     particle.vx += (dx / distance) * force;
                     particle.vy += (dy / distance) * force;
                 }
@@ -251,8 +256,9 @@ class ParticleSystem {
                 const dy = this.particles[i].y - this.particles[j].y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
                 
-                if (distance < 120) {
-                    const opacity = Math.max(0, (120 - distance) / 120) * 0.1;
+                const connectionDistance = window.innerWidth < 1440 ? 120 : window.innerWidth < 1920 ? 150 : 200;
+                if (distance < connectionDistance) {
+                    const opacity = Math.max(0, (connectionDistance - distance) / connectionDistance) * 0.1;
                     this.ctx.strokeStyle = `rgba(182, 145, 33, ${opacity})`;
                     this.ctx.beginPath();
                     this.ctx.moveTo(this.particles[i].x, this.particles[i].y);

@@ -5,6 +5,52 @@
     box-sizing: border-box;
 }
 
+/* Manhattan BC Font */
+@font-face {
+    font-family: 'Manhattan BC';
+    src: url('fonts/ManhattanBC-Regular.woff2') format('woff2'),
+         url('fonts/ManhattanBC-Regular.woff') format('woff'),
+         url('fonts/ManhattanBC-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manhattan BC';
+    src: url('fonts/ManhattanBC-Bold.woff2') format('woff2'),
+         url('fonts/ManhattanBC-Bold.woff') format('woff'),
+         url('fonts/ManhattanBC-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Optimize for high-resolution displays */
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+@media (min-width: 1440px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1920px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 2560px) {
+    html {
+        font-size: 22px;
+    }
+}
+
 /* Animated Background Canvas */
 .particle-canvas {
     position: fixed;
@@ -56,6 +102,21 @@ body {
     z-index: 2;
 }
 
+/* Responsive container scaling */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+        padding: 0 40px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+        padding: 0 60px;
+    }
+}
+
 /* Navigation */
 .navbar {
     position: fixed;
@@ -80,6 +141,21 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* Responsive nav container scaling */
+@media (min-width: 1440px) {
+    .nav-container {
+        max-width: 1400px;
+        padding: 0 40px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .nav-container {
+        max-width: 1600px;
+        padding: 0 60px;
+    }
 }
 
 .nav-logo {
@@ -112,6 +188,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-family: 'Manhattan BC', serif;
     font-weight: 700;
     font-size: 1.8rem;
     animation: shimmer 3s ease-in-out infinite;
@@ -212,6 +289,23 @@ body {
     z-index: 2;
 }
 
+/* Responsive hero scaling */
+@media (min-width: 1440px) {
+    .hero-container {
+        max-width: 1400px;
+        padding: 0 40px;
+        gap: 6rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    .hero-container {
+        max-width: 1600px;
+        padding: 0 60px;
+        gap: 8rem;
+    }
+}
+
 .hero-content {
     animation: fadeInUp 1s ease-out;
 }
@@ -229,11 +323,41 @@ body {
     animation: shimmer 4s ease-in-out infinite;
 }
 
+/* Responsive font scaling */
+@media (min-width: 1440px) {
+    .hero-title {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    .hero-title {
+        font-size: 4.5rem;
+        margin-bottom: 2.5rem;
+    }
+}
+
 .hero-subtitle {
     font-size: 1.3rem;
     color: #ccc;
     margin-bottom: 2rem;
     font-weight: 300;
+}
+
+/* Responsive subtitle scaling */
+@media (min-width: 1440px) {
+    .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    .hero-subtitle {
+        font-size: 1.7rem;
+        margin-bottom: 3rem;
+    }
 }
 
 .cta-button {
@@ -251,6 +375,21 @@ body {
     z-index: 20;
 }
 
+/* Responsive button scaling */
+@media (min-width: 1440px) {
+    .cta-button {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    .cta-button {
+        padding: 1.5rem 3rem;
+        font-size: 1.3rem;
+    }
+}
+
 .cta-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(182, 145, 33, 0.6);
@@ -259,6 +398,19 @@ body {
 .hero-visual {
     position: relative;
     height: 400px;
+}
+
+/* Responsive hero visual scaling */
+@media (min-width: 1440px) {
+    .hero-visual {
+        height: 500px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .hero-visual {
+        height: 600px;
+    }
 }
 
 .floating-elements {
@@ -316,11 +468,55 @@ body {
     animation-delay: 4s;
 }
 
+/* Responsive element scaling */
+@media (min-width: 1440px) {
+    .element-1 {
+        width: 100px;
+        height: 100px;
+    }
+    .element-2 {
+        width: 150px;
+        height: 150px;
+    }
+    .element-3 {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .element-1 {
+        width: 120px;
+        height: 120px;
+    }
+    .element-2 {
+        width: 180px;
+        height: 180px;
+    }
+    .element-3 {
+        width: 100px;
+        height: 100px;
+    }
+}
+
 /* Services Section */
 .services {
     padding: 6rem 0;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     position: relative;
+}
+
+/* Responsive services padding */
+@media (min-width: 1440px) {
+    .services {
+        padding: 8rem 0;
+    }
+}
+
+@media (min-width: 1920px) {
+    .services {
+        padding: 10rem 0;
+    }
 }
 
 
@@ -343,12 +539,42 @@ body {
     animation: shimmer 3s ease-in-out infinite;
 }
 
+/* Responsive section title scaling */
+@media (min-width: 1440px) {
+    .section-title {
+        font-size: 3rem;
+        margin-bottom: 4rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    .section-title {
+        font-size: 3.5rem;
+        margin-bottom: 5rem;
+    }
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     max-width: 800px;
     margin: 0 auto;
+}
+
+/* Responsive services grid scaling */
+@media (min-width: 1440px) {
+    .services-grid {
+        max-width: 1000px;
+        gap: 3rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    .services-grid {
+        max-width: 1200px;
+        gap: 4rem;
+    }
 }
 
 .service-card {
@@ -361,6 +587,21 @@ body {
     backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
+}
+
+/* Responsive service card scaling */
+@media (min-width: 1440px) {
+    .service-card {
+        padding: 2.5rem;
+        border-radius: 20px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .service-card {
+        padding: 3rem;
+        border-radius: 25px;
+    }
 }
 
 
@@ -382,6 +623,25 @@ body {
     margin: 0 auto 1.5rem;
     font-size: 2rem;
     color: #000;
+}
+
+/* Responsive service icon scaling */
+@media (min-width: 1440px) {
+    .service-icon {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    .service-icon {
+        width: 120px;
+        height: 120px;
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+    }
 }
 
 .service-card h3 {
@@ -422,6 +682,19 @@ body {
     background: linear-gradient(135deg, #000 0%, #0a0a0a 100%);
     text-align: center;
     position: relative;
+}
+
+/* Responsive calendar padding */
+@media (min-width: 1440px) {
+    .calendar-section {
+        padding: 8rem 0;
+    }
+}
+
+@media (min-width: 1920px) {
+    .calendar-section {
+        padding: 10rem 0;
+    }
 }
 
 
@@ -549,6 +822,19 @@ body {
     position: relative;
 }
 
+/* Responsive footer padding */
+@media (min-width: 1440px) {
+    .footer {
+        padding: 6rem 0 3rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    .footer {
+        padding: 8rem 0 4rem;
+    }
+}
+
 
 
 .footer .container {
@@ -561,6 +847,21 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
+}
+
+/* Responsive footer scaling */
+@media (min-width: 1440px) {
+    .footer-content {
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    .footer-content {
+        gap: 4rem;
+        margin-bottom: 4rem;
+    }
 }
 
 .footer-section h3,
@@ -862,6 +1163,7 @@ body {
     }
 
     .nav-logo h2 {
+        font-family: 'Manhattan BC', serif;
         font-size: 2.5rem;
     }
 
@@ -1008,6 +1310,7 @@ body {
     }
 
     .nav-logo h2 {
+        font-family: 'Manhattan BC', serif;
         font-size: 3rem;
     }
 

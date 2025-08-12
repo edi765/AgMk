@@ -69,7 +69,7 @@ html {
 .logo-icon,
 .service-icon,
 .social-link,
-.nav-logo h2,
+.nav-banner,
 .hero-title,
 .section-title,
 .service-card h3,
@@ -181,16 +181,16 @@ body {
     filter: drop-shadow(0 0 12px rgba(182, 145, 33, 0.6));
 }
 
-.nav-logo h2 {
-    background: linear-gradient(90deg, #6C5522, #B8924C, #FEE28F, #E4C376, #C49C56, #FBDF8C, #FEFCC1, #FEE490, #A98749);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-family: 'Anton', 'Impact', 'Arial Black', sans-serif;
-    font-weight: normal;
-    font-size: 1.8rem;
-    animation: shimmer 3s ease-in-out infinite;
+.nav-banner {
+    height: 40px;
+    width: auto;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 8px rgba(182, 145, 33, 0.4));
+}
+
+.nav-logo:hover .nav-banner {
+    filter: drop-shadow(0 0 12px rgba(182, 145, 33, 0.6));
+    transform: scale(1.05);
 }
 
 .nav-menu {
@@ -1161,9 +1161,9 @@ body {
         padding: 0 40px;
     }
 
-    .nav-logo h2 {
-        font-family: 'Anton', 'Impact', 'Arial Black', sans-serif;
-        font-size: 2.5rem;
+    .nav-banner {
+        height: 50px;
+        width: auto;
     }
 
     .nav-menu {
@@ -1308,9 +1308,9 @@ body {
         padding: 0 60px;
     }
 
-    .nav-logo h2 {
-        font-family: 'Anton', 'Impact', 'Arial Black', sans-serif;
-        font-size: 3rem;
+    .nav-banner {
+        height: 60px;
+        width: auto;
     }
 
     .nav-menu {

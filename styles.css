@@ -16,6 +16,15 @@
     font-display: swap;
 }
 
+/* Anton Font - Web font alternative for consistent cross-platform display */
+@font-face {
+    font-family: 'Anton';
+    src: url('https://fonts.gstatic.com/s/anton/v23/1Ptgg87LROyAm3Kz-Co.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Optimize for high-resolution displays */
 html {
     font-size: 16px;
@@ -178,7 +187,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-family: 'Anton', 'Impact', 'Arial Black', sans-serif;
     font-weight: normal;
     font-size: 1.8rem;
     animation: shimmer 3s ease-in-out infinite;
@@ -1153,7 +1162,7 @@ body {
     }
 
     .nav-logo h2 {
-        font-family: 'Impact', 'Arial Black', sans-serif;
+        font-family: 'Anton', 'Impact', 'Arial Black', sans-serif;
         font-size: 2.5rem;
     }
 
@@ -1300,7 +1309,7 @@ body {
     }
 
     .nav-logo h2 {
-        font-family: 'Impact', 'Arial Black', sans-serif;
+        font-family: 'Anton', 'Impact', 'Arial Black', sans-serif;
         font-size: 3rem;
     }
 

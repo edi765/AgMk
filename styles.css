@@ -5,23 +5,13 @@
     box-sizing: border-box;
 }
 
-/* Manhattan BC Font */
+/* Impact Font - Available on most systems */
 @font-face {
-    font-family: 'Manhattan BC';
-    src: url('fonts/ManhattanBC-Regular.woff2') format('woff2'),
-         url('fonts/ManhattanBC-Regular.woff') format('woff'),
-         url('fonts/ManhattanBC-Regular.ttf') format('truetype');
+    font-family: 'Impact';
+    src: local('Impact'), 
+         local('Impact Regular'),
+         local('Impact-Regular');
     font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Manhattan BC';
-    src: url('fonts/ManhattanBC-Bold.woff2') format('woff2'),
-         url('fonts/ManhattanBC-Bold.woff') format('woff'),
-         url('fonts/ManhattanBC-Bold.ttf') format('truetype');
-    font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
@@ -188,8 +178,8 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-family: 'Manhattan BC', serif;
-    font-weight: 700;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-weight: normal;
     font-size: 1.8rem;
     animation: shimmer 3s ease-in-out infinite;
 }
@@ -311,7 +301,7 @@ body {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
     background: linear-gradient(90deg, #6C5522, #B8924C, #FEE28F, #E4C376, #C49C56, #FBDF8C, #FEFCC1, #FEE490, #A98749);
@@ -326,14 +316,14 @@ body {
 /* Responsive font scaling */
 @media (min-width: 1440px) {
     .hero-title {
-        font-size: 4rem;
+        font-size: 3.2rem;
         margin-bottom: 2rem;
     }
 }
 
 @media (min-width: 1920px) {
     .hero-title {
-        font-size: 4.5rem;
+        font-size: 3.6rem;
         margin-bottom: 2.5rem;
     }
 }
@@ -1163,7 +1153,7 @@ body {
     }
 
     .nav-logo h2 {
-        font-family: 'Manhattan BC', serif;
+        font-family: 'Impact', 'Arial Black', sans-serif;
         font-size: 2.5rem;
     }
 
@@ -1176,7 +1166,7 @@ body {
     }
 
     .hero-title {
-        font-size: 5rem;
+        font-size: 4rem;
         line-height: 1.1;
         margin-bottom: 2rem;
     }
@@ -1310,7 +1300,7 @@ body {
     }
 
     .nav-logo h2 {
-        font-family: 'Manhattan BC', serif;
+        font-family: 'Impact', 'Arial Black', sans-serif;
         font-size: 3rem;
     }
 
@@ -1323,7 +1313,7 @@ body {
     }
 
     .hero-title {
-        font-size: 6.5rem;
+        font-size: 5.2rem;
         line-height: 1.1;
         margin-bottom: 3rem;
     }

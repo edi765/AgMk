@@ -1,31 +1,31 @@
-# Manhattan BC Font
+# Impact Font
 
 ## Descriere
-Fontul Manhattan BC este folosit pentru logo-ul "CSI MARKETING" din navbar.
+Fontul Impact este folosit pentru logo-ul "CSI MARKETING" din navbar. Este un font sans-serif bold, disponibil pe majoritatea sistemelor de operare.
 
 ## Instalare
 
-### Opțiunea 1: Descărcare directă
-1. Descarcă fontul Manhattan BC de pe site-ul oficial: https://www.fonts.com/font/bitstream/manhattan-bc
-2. Extrage fișierele în acest folder
-3. Asigură-te că ai următoarele fișiere:
-   - `ManhattanBC-Regular.woff2`
-   - `ManhattanBC-Regular.woff`
-   - `ManhattanBC-Regular.ttf`
-   - `ManhattanBC-Bold.woff2`
-   - `ManhattanBC-Bold.woff`
-   - `ManhattanBC-Bold.ttf`
+### Opțiunea 1: Font pre-instalat
+Fontul Impact este deja pre-instalat pe majoritatea sistemelor de operare:
+- **Windows**: Pre-instalat cu sistemul
+- **macOS**: Pre-instalat cu sistemul  
+- **Linux**: Disponibil prin pachetele de fonturi
 
-### Opțiunea 2: Font alternativ
-Dacă nu poți descărca Manhattan BC, poți folosi un font similar:
-- **Alternativ 1**: "Playfair Display" (Google Fonts)
-- **Alternativ 2**: "Cormorant Garamond" (Google Fonts)
-- **Alternativ 3**: "Libre Baskerville" (Google Fonts)
+### Opțiunea 2: Descărcare manuală (opțional)
+Dacă vrei să descarci o versiune specifică:
+1. Descarcă de pe https://www.fonts.com/font/microsoft-corporation/impact
+2. Sau folosește Google Fonts alternative
+
+### Opțiunea 3: Font alternativ
+Dacă vrei să folosești un font diferit:
+- **Alternativ 1**: "Anton" (Google Fonts) - similar cu Impact
+- **Alternativ 2**: "Bebas Neue" (Google Fonts) - bold și modern
+- **Alternativ 3**: "Oswald" (Google Fonts) - sans-serif bold
 
 Pentru a folosi un font alternativ, modifică `styles.css`:
 ```css
 .nav-logo h2 {
-    font-family: 'Playfair Display', serif; /* sau alt font */
+    font-family: 'Anton', sans-serif; /* sau alt font */
     /* ... restul stilurilor */
 }
 ```
@@ -34,15 +34,13 @@ Pentru a folosi un font alternativ, modifică `styles.css`:
 ```
 fonts/
 ├── README.md
-├── ManhattanBC-Regular.woff2
-├── ManhattanBC-Regular.woff
-├── ManhattanBC-Regular.ttf
-├── ManhattanBC-Bold.woff2
-├── ManhattanBC-Bold.woff
-└── ManhattanBC-Bold.ttf
+└── (fonturile sunt pre-instalate pe sistem)
 ```
 
 ## Note
-- Fontul Manhattan BC este un font comercial și poate necesita licență
-- Asigură-te că ai drepturile de a folosi fontul pe site-ul tău
-- Fontul este optimizat pentru logo-uri și branding
+- Fontul Impact este pre-instalat pe majoritatea sistemelor
+- Nu necesită licență sau descărcare suplimentară
+- Este un font sans-serif bold, perfect pentru logo-uri și branding
+- Fallback la 'Arial Black' dacă Impact nu este disponibil
+
+

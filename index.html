@@ -120,15 +120,21 @@
             <p class="calendar-subtitle">Alege ziua și ora potrivită pentru tine</p>
             <div class="calendar-contact-container">
                 <div class="calendar-wrapper">
-                    <div class="calendly-inline-widget" data-url="https://calendly.com/your-calendly-link" style="min-width:320px;height:700px;"></div>
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/demo/30min" style="min-width:320px;height:700px;"></div>
                 </div>
                 <div class="contact-form-wrapper">
                     <div class="contact-content">
                         <h3>Vrei să discutăm despre proiectul tău?</h3>
-                        <p>Lasă-ne un mesaj și te contactăm în cel mai scurt timp pentru a discuta despre strategia ta digitală.</p>
+                        <p>Completează formularul de mai jos și te contactăm în cel mai scurt timp pentru a discuta despre strategia ta digitală.</p>
                         <form class="contact-form">
                             <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Numele tău" required>
+                            </div>
+                            <div class="form-group">
                                 <input type="email" id="email" name="email" placeholder="Adresa ta de email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" placeholder="Despre ce vrei să discutăm?" rows="4" required></textarea>
                             </div>
                             <button type="submit" class="contact-button">Trimite mesajul</button>
                         </form>

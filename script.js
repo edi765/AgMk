@@ -288,6 +288,21 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (error) {
         console.error('Error creating ParticleSystem:', error);
     }
+    
+    // Verify openCalendly function is available
+    if (typeof openCalendly === 'undefined') {
+        console.error('openCalendly function not found!');
+        // Make it available globally as fallback
+        window.openCalendly = function() {
+            const contactSection = document.querySelector('#contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        };
+    }
 });
 
 // Mobile Navigation Toggle
@@ -354,16 +369,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Calendly integration
+// Calendar section scroll function
 function openCalendly() {
-    // If Calendly widget is loaded, open it
-    if (typeof Calendly !== 'undefined') {
-        Calendly.initPopupWidget({
-            url: 'https://calendly.com/your-calendly-link'
-        });
-    } else {
-        // Fallback: scroll to calendar section
-        document.querySelector('#contact').scrollIntoView({
+    console.log('openCalendly function called!');
+    try {
+        console.log('Scrolling to calendar section...');
+        // Scroll to calendar section
+        const contactSection = document.querySelector('#contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            console.log('Successfully scrolled to calendar section');
+        } else {
+            console.error('Calendar section not found');
+        }
+    } catch (error) {
+        console.error('Error in openCalendly:', error);
+        // Fallback: scroll to top of page
+        window.scrollTo({
+            top: 0,
             behavior: 'smooth'
         });
     }

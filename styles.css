@@ -124,7 +124,6 @@ body {
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    padding: 1rem 0;
     transition: all 0.3s ease;
     border-bottom: 1px solid rgba(182, 145, 33, 0.2);
     position: relative;
@@ -140,8 +139,8 @@ body {
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 100%;
-    padding-top: 2.5rem;
 }
 
 /* Responsive nav container scaling */
@@ -176,6 +175,7 @@ body {
 .logo-icon img {
     transition: all 0.3s ease;
     filter: drop-shadow(0 0 8px rgba(182, 145, 33, 0.4));
+    filter: brightness(0) saturate(100%) invert(84%) sepia(31%) saturate(638%) hue-rotate(359deg) brightness(103%) contrast(107%);
 }
 
 .nav-logo:hover .logo-icon img {
@@ -184,7 +184,8 @@ body {
 }
 
 .nav-banner {
-    max-height: 200px;
+    max-height: 30px;
+    max-width: 150px;
     height: auto;
     width: auto;
     transition: all 0.3s ease;
@@ -947,6 +948,14 @@ body {
     color: #666;
 }
 
+.footer-banner {
+    max-height: 40px;
+    height: auto;
+    width: auto;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 5px rgba(182, 145, 33, 0.3));
+}
+
 .designer-credit {
     display: flex;
     flex-direction: column;
@@ -1175,7 +1184,7 @@ body {
     }
 
     .nav-banner {
-        max-height: 70px;
+        max-height: 40px;
         height: auto;
         width: auto;
     }
@@ -1323,7 +1332,7 @@ body {
     }
 
     .nav-banner {
-        max-height: 80px;
+        max-height: 50px;
         height: auto;
         width: auto;
     }
